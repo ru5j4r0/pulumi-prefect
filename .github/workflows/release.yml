@@ -16,6 +16,9 @@ jobs:
       uses: actions/setup-go@v5
       with:
         go-version-file: provider/go.mod
+        cache-dependency-path: |
+          provider/go.sum
+          provider/shim/go.sum
     - name: Install pulumictl
       uses: jaxxstorm/action-install-gh-release@v1.11.0
       with:
