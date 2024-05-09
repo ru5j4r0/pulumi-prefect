@@ -1,0 +1,1908 @@
+{
+    "name": "prefect",
+    "displayName": "Prefect",
+    "description": "A Pulumi package for creating and managing Prefect cloud resources.",
+    "keywords": [
+        "prefect",
+        "prefect-cloud",
+        "category/cloud"
+    ],
+    "homepage": "https://www.pulumi.com",
+    "license": "Apache-2.0",
+    "attribution": "This Pulumi package is based on the [`prefect` Terraform Provider](https://github.com/prefecthq/terraform-provider-prefect).",
+    "repository": "https://github.com/ru5j4r0/pulumi-prefect",
+    "pluginDownloadURL": "https://github.com/ru5j4r0/pulumi-prefect/releases/",
+    "publisher": "ru5j4r0",
+    "meta": {
+        "moduleFormat": "(.*)(?:/[^/]*)"
+    },
+    "language": {
+        "csharp": {
+            "packageReferences": {
+                "Pulumi": "3.*"
+            },
+            "compatibility": "tfbridge20"
+        },
+        "go": {
+            "importBasePath": "github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect",
+            "generateResourceContainerTypes": true,
+            "generateExtraInputTypes": true
+        },
+        "nodejs": {
+            "packageDescription": "A Pulumi package for creating and managing Prefect cloud resources.",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/prefecthq/terraform-provider-prefect)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-prefect` repo](https://github.com/ru5j4r0/pulumi-prefect/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-prefect` repo](https://github.com/prefecthq/terraform-provider-prefect/issues).",
+            "dependencies": {
+                "@pulumi/pulumi": "^3.0.0"
+            },
+            "devDependencies": {
+                "@types/mime": "^2.0.0",
+                "@types/node": "^10.0.0"
+            },
+            "compatibility": "tfbridge20",
+            "disableUnionOutputTypes": true
+        },
+        "python": {
+            "requires": {
+                "pulumi": "\u003e=3.0.0,\u003c4.0.0"
+            },
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/prefecthq/terraform-provider-prefect)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-prefect` repo](https://github.com/ru5j4r0/pulumi-prefect/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-prefect` repo](https://github.com/prefecthq/terraform-provider-prefect/issues).",
+            "compatibility": "tfbridge20",
+            "pyproject": {}
+        }
+    },
+    "config": {
+        "variables": {
+            "accountId": {
+                "type": "string",
+                "description": "Default Prefect Cloud Account ID. Can also be set via the `PREFECT_CLOUD_ACCOUNT_ID` environment variable.\n"
+            },
+            "apiKey": {
+                "type": "string",
+                "description": "Prefect Cloud API Key. Can also be set via the `PREFECT_API_KEY` environment variable.\n",
+                "secret": true
+            },
+            "endpoint": {
+                "type": "string",
+                "description": "Prefect API URL. Can also be set via the `PREFECT_API_URL` environment variable. Defaults to `https://api.prefect.cloud`\n"
+            },
+            "workspaceId": {
+                "type": "string",
+                "description": "Default Prefect Cloud Workspace ID.\n"
+            }
+        }
+    },
+    "types": {
+        "prefect:index/getAccountMembersMember:getAccountMembersMember": {
+            "properties": {
+                "accountRoleId": {
+                    "type": "string",
+                    "description": "Acount Role ID (UUID)\n"
+                },
+                "accountRoleName": {
+                    "type": "string",
+                    "description": "Name of Account Role assigned to member\n"
+                },
+                "actorId": {
+                    "type": "string",
+                    "description": "Actor ID (UUID)\n"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "Member email\n"
+                },
+                "firstName": {
+                    "type": "string",
+                    "description": "Member's first name\n"
+                },
+                "handle": {
+                    "type": "string",
+                    "description": "Member handle, or a human-readable identifier\n"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Account Member ID (UUID)\n"
+                },
+                "lastName": {
+                    "type": "string",
+                    "description": "Member's last name\n"
+                },
+                "userId": {
+                    "type": "string",
+                    "description": "User ID (UUID)\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "accountRoleId",
+                "accountRoleName",
+                "actorId",
+                "email",
+                "firstName",
+                "handle",
+                "id",
+                "lastName",
+                "userId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "prefect:index/getTeamsTeam:getTeamsTeam": {
+            "properties": {
+                "created": {
+                    "type": "string",
+                    "description": "Date and time of the team creation in RFC 3339 format\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of team\n"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Team ID (UUID)\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of Team\n"
+                },
+                "updated": {
+                    "type": "string",
+                    "description": "Date and time that the team was last updated in RFC 3339 format\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "created",
+                "description",
+                "id",
+                "name",
+                "updated"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "prefect:index/getWorkPoolsWorkPool:getWorkPoolsWorkPool": {
+            "properties": {
+                "baseJobTemplate": {
+                    "type": "string",
+                    "description": "The base job template for the work pool, as a JSON string\n"
+                },
+                "concurrencyLimit": {
+                    "type": "integer",
+                    "description": "The concurrency limit applied to this work pool\n"
+                },
+                "created": {
+                    "type": "string",
+                    "description": "Date and time of the work pool creation in RFC 3339 format\n"
+                },
+                "defaultQueueId": {
+                    "type": "string",
+                    "description": "The ID (UUID) of the default queue associated with this work pool\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the work pool\n"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Work pool ID (UUID)\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the work pool\n"
+                },
+                "paused": {
+                    "type": "boolean",
+                    "description": "Whether this work pool is paused\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Type of the work pool\n"
+                },
+                "updated": {
+                    "type": "string",
+                    "description": "Date and time that the work pool was last updated in RFC 3339 format\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "baseJobTemplate",
+                "concurrencyLimit",
+                "created",
+                "defaultQueueId",
+                "description",
+                "id",
+                "name",
+                "paused",
+                "type",
+                "updated"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "prefect:index/getWorkerMetadataBaseJobConfigs:getWorkerMetadataBaseJobConfigs": {
+            "properties": {
+                "azureContainerInstances": {
+                    "type": "string",
+                    "description": "Default base job configuration for Azure Container Instances workers\n"
+                },
+                "azureContainerInstancesPush": {
+                    "type": "string",
+                    "description": "Default base job configuration for Azure Container Instances Push workers\n"
+                },
+                "cloudRun": {
+                    "type": "string",
+                    "description": "Default base job configuration for Cloud Run workers\n"
+                },
+                "cloudRunPush": {
+                    "type": "string",
+                    "description": "Default base job configuration for Cloud Run Push workers\n"
+                },
+                "docker": {
+                    "type": "string",
+                    "description": "Default base job configuration for Docker workers\n"
+                },
+                "ecs": {
+                    "type": "string",
+                    "description": "Default base job configuration for ECS workers\n"
+                },
+                "ecsPush": {
+                    "type": "string",
+                    "description": "Default base job configuration for ECS Push workers\n"
+                },
+                "kubernetes": {
+                    "type": "string",
+                    "description": "Default base job configuration for Kubernetes workers\n"
+                },
+                "prefectAgent": {
+                    "type": "string",
+                    "description": "Default base job configuration for Prefect Agent workers\n"
+                },
+                "process": {
+                    "type": "string",
+                    "description": "Default base job configuration for Process workers\n"
+                },
+                "vertexAi": {
+                    "type": "string",
+                    "description": "Default base job configuration for Vertex AI workers\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "azureContainerInstances",
+                "azureContainerInstancesPush",
+                "cloudRun",
+                "cloudRunPush",
+                "docker",
+                "ecs",
+                "ecsPush",
+                "kubernetes",
+                "prefectAgent",
+                "process",
+                "vertexAi"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        }
+    },
+    "provider": {
+        "description": "The provider type for the prefect package. By default, resources use package-wide configuration\nsettings, however an explicit `Provider` instance may be created and passed during resource\nconstruction to achieve fine-grained programmatic control over provider settings. See the\n[documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.\n",
+        "properties": {
+            "accountId": {
+                "type": "string",
+                "description": "Default Prefect Cloud Account ID. Can also be set via the `PREFECT_CLOUD_ACCOUNT_ID` environment variable.\n"
+            },
+            "apiKey": {
+                "type": "string",
+                "description": "Prefect Cloud API Key. Can also be set via the `PREFECT_API_KEY` environment variable.\n",
+                "secret": true
+            },
+            "endpoint": {
+                "type": "string",
+                "description": "Prefect API URL. Can also be set via the `PREFECT_API_URL` environment variable. Defaults to `https://api.prefect.cloud`\n"
+            },
+            "workspaceId": {
+                "type": "string",
+                "description": "Default Prefect Cloud Workspace ID.\n"
+            }
+        },
+        "inputProperties": {
+            "accountId": {
+                "type": "string",
+                "description": "Default Prefect Cloud Account ID. Can also be set via the `PREFECT_CLOUD_ACCOUNT_ID` environment variable.\n"
+            },
+            "apiKey": {
+                "type": "string",
+                "description": "Prefect Cloud API Key. Can also be set via the `PREFECT_API_KEY` environment variable.\n",
+                "secret": true
+            },
+            "endpoint": {
+                "type": "string",
+                "description": "Prefect API URL. Can also be set via the `PREFECT_API_URL` environment variable. Defaults to `https://api.prefect.cloud`\n"
+            },
+            "workspaceId": {
+                "type": "string",
+                "description": "Default Prefect Cloud Workspace ID.\n"
+            }
+        }
+    },
+    "resources": {
+        "prefect:index/account:Account": {
+            "description": "## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.Account;\nimport com.pulumi.prefect.AccountArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new Account(\"example\", AccountArgs.builder()        \n            .allowPublicWorkspaces(true)\n            .billingEmail(\"marvin@prefect.io\")\n            .description(\"A cool account\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: prefect:Account\n    properties:\n      allowPublicWorkspaces: true\n      billingEmail: marvin@prefect.io\n      description: A cool account\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\nPrefect Accounts can be imported using the account's UUID\n\n```sh\n$ pulumi import prefect:index/account:Account example 00000000-0000-0000-0000-000000000000\n```\n\n",
+            "properties": {
+                "allowPublicWorkspaces": {
+                    "type": "boolean",
+                    "description": "Whether or not this account allows public workspaces\n"
+                },
+                "billingEmail": {
+                    "type": "string",
+                    "description": "Billing email to apply to the account's Stripe customer\n"
+                },
+                "created": {
+                    "type": "string",
+                    "description": "Timestamp of when the resource was created (RFC3339)\n"
+                },
+                "handle": {
+                    "type": "string",
+                    "description": "Unique handle of the account\n"
+                },
+                "link": {
+                    "type": "string",
+                    "description": "An optional for an external url associated with the account, e.g. https://prefect.io/\n"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "An optional physical location for the account, e.g. Washington, D.C.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the account\n"
+                },
+                "updated": {
+                    "type": "string",
+                    "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                }
+            },
+            "required": [
+                "created",
+                "handle",
+                "name",
+                "updated"
+            ],
+            "inputProperties": {
+                "allowPublicWorkspaces": {
+                    "type": "boolean",
+                    "description": "Whether or not this account allows public workspaces\n"
+                },
+                "billingEmail": {
+                    "type": "string",
+                    "description": "Billing email to apply to the account's Stripe customer\n"
+                },
+                "handle": {
+                    "type": "string",
+                    "description": "Unique handle of the account\n"
+                },
+                "link": {
+                    "type": "string",
+                    "description": "An optional for an external url associated with the account, e.g. https://prefect.io/\n"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "An optional physical location for the account, e.g. Washington, D.C.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the account\n"
+                }
+            },
+            "requiredInputs": [
+                "handle"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Account resources.\n",
+                "properties": {
+                    "allowPublicWorkspaces": {
+                        "type": "boolean",
+                        "description": "Whether or not this account allows public workspaces\n"
+                    },
+                    "billingEmail": {
+                        "type": "string",
+                        "description": "Billing email to apply to the account's Stripe customer\n"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was created (RFC3339)\n"
+                    },
+                    "handle": {
+                        "type": "string",
+                        "description": "Unique handle of the account\n"
+                    },
+                    "link": {
+                        "type": "string",
+                        "description": "An optional for an external url associated with the account, e.g. https://prefect.io/\n"
+                    },
+                    "location": {
+                        "type": "string",
+                        "description": "An optional physical location for the account, e.g. Washington, D.C.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the account\n"
+                    },
+                    "updated": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "prefect:index/serviceAccount:ServiceAccount": {
+            "description": "The resource `service_account` represents a Prefect Cloud Service Account. A Service Account allows you to create an API Key that is not associated with a user account.\n\nService Accounts are used to configure API access for workers or programs. Use this resource to provision and rotate Keys as well as assign Account and Workspace Access through Roles.\n\nAPI Keys for `service_account` resources can be rotated by modifying the `api_key_expiration` attribute.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\nimport * as time from \"@pulumiverse/time\";\n\n// NON-EXPIRING API KEY\nconst exampleServiceAccount = new prefect.ServiceAccount(\"exampleServiceAccount\", {});\nconst ninetyDays = new time.Rotating(\"ninetyDays\", {rotationDays: 90});\n// Pass the time_rotating resource to the `api_key_expiration` attribute\n// in order to automate the rotation of the Service Account key\nconst exampleIndex_serviceAccountServiceAccount = new prefect.ServiceAccount(\"exampleIndex/serviceAccountServiceAccount\", {apiKeyExpiration: ninetyDays.rotationRfc3339});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\nimport pulumiverse_time as time\n\n# NON-EXPIRING API KEY\nexample_service_account = prefect.ServiceAccount(\"exampleServiceAccount\")\nninety_days = time.Rotating(\"ninetyDays\", rotation_days=90)\n# Pass the time_rotating resource to the `api_key_expiration` attribute\n# in order to automate the rotation of the Service Account key\nexample_index_service_account_service_account = prefect.ServiceAccount(\"exampleIndex/serviceAccountServiceAccount\", api_key_expiration=ninety_days.rotation_rfc3339)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\nusing Time = Pulumiverse.Time;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    // NON-EXPIRING API KEY\n    var exampleServiceAccount = new Prefect.ServiceAccount(\"exampleServiceAccount\");\n\n    var ninetyDays = new Time.Rotating(\"ninetyDays\", new()\n    {\n        RotationDays = 90,\n    });\n\n    // Pass the time_rotating resource to the `api_key_expiration` attribute\n    // in order to automate the rotation of the Service Account key\n    var exampleIndex_serviceAccountServiceAccount = new Prefect.ServiceAccount(\"exampleIndex/serviceAccountServiceAccount\", new()\n    {\n        ApiKeyExpiration = ninetyDays.RotationRfc3339,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/pulumiverse/pulumi-time/sdk/go/time\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t// NON-EXPIRING API KEY\n\t\t_, err := prefect.NewServiceAccount(ctx, \"exampleServiceAccount\", nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tninetyDays, err := time.NewRotating(ctx, \"ninetyDays\", \u0026time.RotatingArgs{\n\t\t\tRotationDays: pulumi.Int(90),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t// Pass the time_rotating resource to the `api_key_expiration` attribute\n\t\t// in order to automate the rotation of the Service Account key\n\t\t_, err = prefect.NewServiceAccount(ctx, \"exampleIndex/serviceAccountServiceAccount\", \u0026prefect.ServiceAccountArgs{\n\t\t\tApiKeyExpiration: ninetyDays.RotationRfc3339,\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.ServiceAccount;\nimport com.pulumi.time.Rotating;\nimport com.pulumi.time.RotatingArgs;\nimport com.pulumi.prefect.ServiceAccountArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        // NON-EXPIRING API KEY\n        var exampleServiceAccount = new ServiceAccount(\"exampleServiceAccount\");\n\n        var ninetyDays = new Rotating(\"ninetyDays\", RotatingArgs.builder()        \n            .rotationDays(90)\n            .build());\n\n        // Pass the time_rotating resource to the `api_key_expiration` attribute\n        // in order to automate the rotation of the Service Account key\n        var exampleIndex_serviceAccountServiceAccount = new ServiceAccount(\"exampleIndex/serviceAccountServiceAccount\", ServiceAccountArgs.builder()        \n            .apiKeyExpiration(ninetyDays.rotationRfc3339())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  # NON-EXPIRING API KEY\n  exampleServiceAccount:\n    type: prefect:ServiceAccount\n  ninetyDays:\n    type: time:Rotating\n    properties:\n      rotationDays: 90\n  # Pass the time_rotating resource to the `api_key_expiration` attribute\n  # in order to automate the rotation of the Service Account key\n  exampleIndex/serviceAccountServiceAccount:\n    type: prefect:ServiceAccount\n    properties:\n      apiKeyExpiration: ${ninetyDays.rotationRfc3339}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\nPrefect Service Accounts can be imported via name in the form `name/my-bot-name`\n\n```sh\n$ pulumi import prefect:index/serviceAccount:ServiceAccount example name/my-bot-name\n```\n\nPrefect Service Accounts can also be imported via UUID\n\n```sh\n$ pulumi import prefect:index/serviceAccount:ServiceAccount example 00000000-0000-0000-0000-000000000000\n```\n\n",
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                },
+                "accountRoleName": {
+                    "type": "string",
+                    "description": "Account Role name of the service account\n"
+                },
+                "apiKey": {
+                    "type": "string",
+                    "description": "API Key associated with the service account\n",
+                    "secret": true
+                },
+                "apiKeyCreated": {
+                    "type": "string",
+                    "description": "Timestamp of the API Key creation (RFC3339)\n"
+                },
+                "apiKeyExpiration": {
+                    "type": "string",
+                    "description": "Timestamp of the API Key expiration (RFC3339). If left as null, the API Key will not expire. Modify this attribute to force a key rotation.\n"
+                },
+                "apiKeyId": {
+                    "type": "string",
+                    "description": "API Key ID associated with the service account\n"
+                },
+                "apiKeyName": {
+                    "type": "string",
+                    "description": "API Key Name associated with the service account\n"
+                },
+                "created": {
+                    "type": "string",
+                    "description": "Timestamp of when the resource was created (RFC3339)\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the service account\n"
+                },
+                "updated": {
+                    "type": "string",
+                    "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                }
+            },
+            "required": [
+                "accountId",
+                "accountRoleName",
+                "apiKey",
+                "apiKeyCreated",
+                "apiKeyId",
+                "apiKeyName",
+                "created",
+                "name",
+                "updated"
+            ],
+            "inputProperties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                },
+                "accountRoleName": {
+                    "type": "string",
+                    "description": "Account Role name of the service account\n"
+                },
+                "apiKeyExpiration": {
+                    "type": "string",
+                    "description": "Timestamp of the API Key expiration (RFC3339). If left as null, the API Key will not expire. Modify this attribute to force a key rotation.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the service account\n"
+                }
+            },
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ServiceAccount resources.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "accountRoleName": {
+                        "type": "string",
+                        "description": "Account Role name of the service account\n"
+                    },
+                    "apiKey": {
+                        "type": "string",
+                        "description": "API Key associated with the service account\n",
+                        "secret": true
+                    },
+                    "apiKeyCreated": {
+                        "type": "string",
+                        "description": "Timestamp of the API Key creation (RFC3339)\n"
+                    },
+                    "apiKeyExpiration": {
+                        "type": "string",
+                        "description": "Timestamp of the API Key expiration (RFC3339). If left as null, the API Key will not expire. Modify this attribute to force a key rotation.\n"
+                    },
+                    "apiKeyId": {
+                        "type": "string",
+                        "description": "API Key ID associated with the service account\n"
+                    },
+                    "apiKeyName": {
+                        "type": "string",
+                        "description": "API Key Name associated with the service account\n"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was created (RFC3339)\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the service account\n"
+                    },
+                    "updated": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "prefect:index/variable:Variable": {
+            "description": "The resource `variable` represents a Prefect Cloud Variable. Variables enable you to store and reuse non-sensitive information in your flows.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst example = new prefect.Variable(\"example\", {value: \"variable value goes here\"});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nexample = prefect.Variable(\"example\", value=\"variable value goes here\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Prefect.Variable(\"example\", new()\n    {\n        Value = \"variable value goes here\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.NewVariable(ctx, \"example\", \u0026prefect.VariableArgs{\n\t\t\tValue: pulumi.String(\"variable value goes here\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.Variable;\nimport com.pulumi.prefect.VariableArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new Variable(\"example\", VariableArgs.builder()        \n            .value(\"variable value goes here\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: prefect:Variable\n    properties:\n      value: variable value goes here\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\nPrefect Variables can be imported via name in the form `name/name_of_variable`\n\n```sh\n$ pulumi import prefect:index/variable:Variable example name/name_of_variable\n```\n\nPrefect Variables can also be imported via UUID\n\n```sh\n$ pulumi import prefect:index/variable:Variable example 00000000-0000-0000-0000-000000000000\n```\n\n",
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                },
+                "created": {
+                    "type": "string",
+                    "description": "Timestamp of when the resource was created (RFC3339)\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the variable\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Tags associated with the variable\n"
+                },
+                "updated": {
+                    "type": "string",
+                    "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Value of the variable\n"
+                },
+                "workspaceId": {
+                    "type": "string",
+                    "description": "Workspace ID (UUID), defaults to the workspace set in the provider\n"
+                }
+            },
+            "required": [
+                "created",
+                "name",
+                "tags",
+                "updated",
+                "value"
+            ],
+            "inputProperties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the variable\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Tags associated with the variable\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Value of the variable\n"
+                },
+                "workspaceId": {
+                    "type": "string",
+                    "description": "Workspace ID (UUID), defaults to the workspace set in the provider\n"
+                }
+            },
+            "requiredInputs": [
+                "value"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Variable resources.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was created (RFC3339)\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the variable\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Tags associated with the variable\n"
+                    },
+                    "updated": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                    },
+                    "value": {
+                        "type": "string",
+                        "description": "Value of the variable\n"
+                    },
+                    "workspaceId": {
+                        "type": "string",
+                        "description": "Workspace ID (UUID), defaults to the workspace set in the provider\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "prefect:index/workPool:WorkPool": {
+            "description": "The resource `work_pool` represents a Prefect Cloud Work Pool. Work Pools represent infrastructure configurations for jobs across several common environments.\n\nWork Pools can be set up with default base job configurations, based on which type. Use this in conjunction with the `prefect.getWorkerMetadata` data source to bootstrap new Work Pools quickly.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as fs from \"fs\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst exampleWorkPool = new prefect.WorkPool(\"exampleWorkPool\", {\n    type: \"kubernetes\",\n    paused: false,\n    workspaceId: \"my-workspace-id\",\n});\n// Use a JSON file to load a base job configuration\nconst exampleIndex_workPoolWorkPool = new prefect.WorkPool(\"exampleIndex/workPoolWorkPool\", {\n    type: \"kubernetes\",\n    workspaceId: data.prefect_workspace.prd.id,\n    paused: false,\n    baseJobTemplate: fs.readFileSync(\"./base-job-template.json\", \"utf8\"),\n});\nconst workerMetadata = prefect.getWorkerMetadata({});\nconst examplePrefectIndex_workPoolWorkPool = new prefect.WorkPool(\"examplePrefectIndex/workPoolWorkPool\", {\n    type: \"kubernetes\",\n    workspaceId: data.prefect_workspace.prd.id,\n    paused: false,\n    baseJobTemplate: workerMetadata.then(workerMetadata =\u003e workerMetadata.baseJobConfigs?.kubernetes),\n});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nexample_work_pool = prefect.WorkPool(\"exampleWorkPool\",\n    type=\"kubernetes\",\n    paused=False,\n    workspace_id=\"my-workspace-id\")\n# Use a JSON file to load a base job configuration\nexample_index_work_pool_work_pool = prefect.WorkPool(\"exampleIndex/workPoolWorkPool\",\n    type=\"kubernetes\",\n    workspace_id=data[\"prefect_workspace\"][\"prd\"][\"id\"],\n    paused=False,\n    base_job_template=(lambda path: open(path).read())(\"./base-job-template.json\"))\nworker_metadata = prefect.get_worker_metadata()\nexample_prefect_index_work_pool_work_pool = prefect.WorkPool(\"examplePrefectIndex/workPoolWorkPool\",\n    type=\"kubernetes\",\n    workspace_id=data[\"prefect_workspace\"][\"prd\"][\"id\"],\n    paused=False,\n    base_job_template=worker_metadata.base_job_configs.kubernetes)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.IO;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var exampleWorkPool = new Prefect.WorkPool(\"exampleWorkPool\", new()\n    {\n        Type = \"kubernetes\",\n        Paused = false,\n        WorkspaceId = \"my-workspace-id\",\n    });\n\n    // Use a JSON file to load a base job configuration\n    var exampleIndex_workPoolWorkPool = new Prefect.WorkPool(\"exampleIndex/workPoolWorkPool\", new()\n    {\n        Type = \"kubernetes\",\n        WorkspaceId = data.Prefect_workspace.Prd.Id,\n        Paused = false,\n        BaseJobTemplate = File.ReadAllText(\"./base-job-template.json\"),\n    });\n\n    var workerMetadata = Prefect.GetWorkerMetadata.Invoke();\n\n    var examplePrefectIndex_workPoolWorkPool = new Prefect.WorkPool(\"examplePrefectIndex/workPoolWorkPool\", new()\n    {\n        Type = \"kubernetes\",\n        WorkspaceId = data.Prefect_workspace.Prd.Id,\n        Paused = false,\n        BaseJobTemplate = workerMetadata.Apply(getWorkerMetadataResult =\u003e getWorkerMetadataResult.BaseJobConfigs?.Kubernetes),\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"os\"\n\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc readFileOrPanic(path string) pulumi.StringPtrInput {\n\tdata, err := os.ReadFile(path)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\treturn pulumi.String(string(data))\n}\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.NewWorkPool(ctx, \"exampleWorkPool\", \u0026prefect.WorkPoolArgs{\n\t\t\tType:        pulumi.String(\"kubernetes\"),\n\t\t\tPaused:      pulumi.Bool(false),\n\t\t\tWorkspaceId: pulumi.String(\"my-workspace-id\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t// Use a JSON file to load a base job configuration\n\t\t_, err = prefect.NewWorkPool(ctx, \"exampleIndex/workPoolWorkPool\", \u0026prefect.WorkPoolArgs{\n\t\t\tType:            pulumi.String(\"kubernetes\"),\n\t\t\tWorkspaceId:     pulumi.Any(data.Prefect_workspace.Prd.Id),\n\t\t\tPaused:          pulumi.Bool(false),\n\t\t\tBaseJobTemplate: readFileOrPanic(\"./base-job-template.json\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tworkerMetadata, err := prefect.GetWorkerMetadata(ctx, nil, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = prefect.NewWorkPool(ctx, \"examplePrefectIndex/workPoolWorkPool\", \u0026prefect.WorkPoolArgs{\n\t\t\tType:            pulumi.String(\"kubernetes\"),\n\t\t\tWorkspaceId:     pulumi.Any(data.Prefect_workspace.Prd.Id),\n\t\t\tPaused:          pulumi.Bool(false),\n\t\t\tBaseJobTemplate: pulumi.String(workerMetadata.BaseJobConfigs.Kubernetes),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.WorkPool;\nimport com.pulumi.prefect.WorkPoolArgs;\nimport com.pulumi.prefect.PrefectFunctions;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var exampleWorkPool = new WorkPool(\"exampleWorkPool\", WorkPoolArgs.builder()        \n            .type(\"kubernetes\")\n            .paused(false)\n            .workspaceId(\"my-workspace-id\")\n            .build());\n\n        // Use a JSON file to load a base job configuration\n        var exampleIndex_workPoolWorkPool = new WorkPool(\"exampleIndex/workPoolWorkPool\", WorkPoolArgs.builder()        \n            .type(\"kubernetes\")\n            .workspaceId(data.prefect_workspace().prd().id())\n            .paused(false)\n            .baseJobTemplate(Files.readString(Paths.get(\"./base-job-template.json\")))\n            .build());\n\n        final var workerMetadata = PrefectFunctions.getWorkerMetadata();\n\n        var examplePrefectIndex_workPoolWorkPool = new WorkPool(\"examplePrefectIndex/workPoolWorkPool\", WorkPoolArgs.builder()        \n            .type(\"kubernetes\")\n            .workspaceId(data.prefect_workspace().prd().id())\n            .paused(false)\n            .baseJobTemplate(workerMetadata.applyValue(getWorkerMetadataResult -\u003e getWorkerMetadataResult.baseJobConfigs().kubernetes()))\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  exampleWorkPool:\n    type: prefect:WorkPool\n    properties:\n      type: kubernetes\n      paused: false\n      workspaceId: my-workspace-id\n  # Use a JSON file to load a base job configuration\n  exampleIndex/workPoolWorkPool:\n    type: prefect:WorkPool\n    properties:\n      type: kubernetes\n      workspaceId: ${data.prefect_workspace.prd.id}\n      paused: false\n      baseJobTemplate:\n        fn::readFile: ./base-job-template.json\n  examplePrefectIndex/workPoolWorkPool:\n    type: prefect:WorkPool\n    properties:\n      type: kubernetes\n      workspaceId: ${data.prefect_workspace.prd.id}\n      paused: false\n      baseJobTemplate: ${workerMetadata.baseJobConfigs.kubernetes}\nvariables:\n  workerMetadata:\n    fn::invoke:\n      Function: prefect:getWorkerMetadata\n      Arguments: {}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\nPrefect Work Pools can be imported using the format `workspace_id,name`\n\n```sh\n$ pulumi import prefect:index/workPool:WorkPool example 00000000-0000-0000-0000-000000000000,kubernetes-work-pool\n```\n\nYou can also import by name only if you have a workspace_id set in your provider\n\n```sh\n$ pulumi import prefect:index/workPool:WorkPool example kubernetes-work-pool\n```\n\n",
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                },
+                "baseJobTemplate": {
+                    "type": "string",
+                    "description": "The base job template for the work pool, as a JSON string\n"
+                },
+                "concurrencyLimit": {
+                    "type": "integer",
+                    "description": "The concurrency limit applied to this work pool\n"
+                },
+                "created": {
+                    "type": "string",
+                    "description": "Timestamp of when the resource was created (RFC3339)\n"
+                },
+                "defaultQueueId": {
+                    "type": "string",
+                    "description": "The ID (UUID) of the default queue associated with this work pool\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the work pool\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the work pool\n"
+                },
+                "paused": {
+                    "type": "boolean",
+                    "description": "Whether this work pool is paused\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Type of the work pool, eg. kubernetes, ecs, process, etc.\n"
+                },
+                "updated": {
+                    "type": "string",
+                    "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                },
+                "workspaceId": {
+                    "type": "string",
+                    "description": "Workspace ID (UUID), defaults to the workspace set in the provider\n"
+                }
+            },
+            "required": [
+                "baseJobTemplate",
+                "created",
+                "defaultQueueId",
+                "name",
+                "paused",
+                "type",
+                "updated"
+            ],
+            "inputProperties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                },
+                "baseJobTemplate": {
+                    "type": "string",
+                    "description": "The base job template for the work pool, as a JSON string\n"
+                },
+                "concurrencyLimit": {
+                    "type": "integer",
+                    "description": "The concurrency limit applied to this work pool\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the work pool\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the work pool\n"
+                },
+                "paused": {
+                    "type": "boolean",
+                    "description": "Whether this work pool is paused\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Type of the work pool, eg. kubernetes, ecs, process, etc.\n"
+                },
+                "workspaceId": {
+                    "type": "string",
+                    "description": "Workspace ID (UUID), defaults to the workspace set in the provider\n"
+                }
+            },
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering WorkPool resources.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "baseJobTemplate": {
+                        "type": "string",
+                        "description": "The base job template for the work pool, as a JSON string\n"
+                    },
+                    "concurrencyLimit": {
+                        "type": "integer",
+                        "description": "The concurrency limit applied to this work pool\n"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was created (RFC3339)\n"
+                    },
+                    "defaultQueueId": {
+                        "type": "string",
+                        "description": "The ID (UUID) of the default queue associated with this work pool\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the work pool\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the work pool\n"
+                    },
+                    "paused": {
+                        "type": "boolean",
+                        "description": "Whether this work pool is paused\n"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Type of the work pool, eg. kubernetes, ecs, process, etc.\n"
+                    },
+                    "updated": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                    },
+                    "workspaceId": {
+                        "type": "string",
+                        "description": "Workspace ID (UUID), defaults to the workspace set in the provider\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "prefect:index/workspace:Workspace": {
+            "description": "The resource `workspace` represents a Prefect Cloud Workspace. Workspaces are discrete environments in Prefect Cloud for your flows, configurations, and deployments. Manage your workflows and RBAC policies using `work_pool` and `workspace_access` resources.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst example = new prefect.Workspace(\"example\", {handle: \"my-workspace\"});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nexample = prefect.Workspace(\"example\", handle=\"my-workspace\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Prefect.Workspace(\"example\", new()\n    {\n        Handle = \"my-workspace\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.NewWorkspace(ctx, \"example\", \u0026prefect.WorkspaceArgs{\n\t\t\tHandle: pulumi.String(\"my-workspace\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.Workspace;\nimport com.pulumi.prefect.WorkspaceArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new Workspace(\"example\", WorkspaceArgs.builder()        \n            .handle(\"my-workspace\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: prefect:Workspace\n    properties:\n      handle: my-workspace\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\nPrefect Workspaces can be imported via handle in the form `handle/workspace-handle`\n\n```sh\n$ pulumi import prefect:index/workspace:Workspace example handle/workspace-handle\n```\n\nPrefect Workspaces can also be imported via UUID\n\n```sh\n$ pulumi import prefect:index/workspace:Workspace example 00000000-0000-0000-0000-000000000000\n```\n\n",
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                },
+                "created": {
+                    "type": "string",
+                    "description": "Timestamp of when the resource was created (RFC3339)\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description for the workspace\n"
+                },
+                "handle": {
+                    "type": "string",
+                    "description": "Unique handle for the workspace\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the workspace\n"
+                },
+                "updated": {
+                    "type": "string",
+                    "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                }
+            },
+            "required": [
+                "created",
+                "description",
+                "handle",
+                "name",
+                "updated"
+            ],
+            "inputProperties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description for the workspace\n"
+                },
+                "handle": {
+                    "type": "string",
+                    "description": "Unique handle for the workspace\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the workspace\n"
+                }
+            },
+            "requiredInputs": [
+                "handle"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Workspace resources.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was created (RFC3339)\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description for the workspace\n"
+                    },
+                    "handle": {
+                        "type": "string",
+                        "description": "Unique handle for the workspace\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the workspace\n"
+                    },
+                    "updated": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "prefect:index/workspaceAccess:WorkspaceAccess": {
+            "description": "The resource `workspace_access` represents a connection between an accessor (User, Service Account or Team) with a Workspace Role. This resource specifies an actor's access level to a specific Workspace in the Account.\n\nUse this resource in conjunction with the `workspace_role` resource or data source to manage access to Workspaces.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst developer = prefect.getWorkspaceRole({\n    name: \"Developer\",\n});\nconst marvin = prefect.getAccountMember({\n    email: \"marvin@prefect.io\",\n});\n// Assign the Workspace Role to the Account Member\nconst marvinDeveloper = new prefect.WorkspaceAccess(\"marvinDeveloper\", {\n    accessorType: \"USER\",\n    accessorId: prefect_account_member.marvin.user_id,\n    workspaceId: \"00000000-0000-0000-0000-000000000000\",\n    workspaceRoleId: developer.then(developer =\u003e developer.id),\n});\n// ASSIGNING WORKSPACE ACCESS TO A SERVICE ACCOUNT\n// Create a Service Account resource\nconst bot = new prefect.ServiceAccount(\"bot\", {});\n// Assign the Workspace Role to the Service Account\nconst botDeveloper = new prefect.WorkspaceAccess(\"botDeveloper\", {\n    accessorType: \"SERVICE_ACCOUNT\",\n    accessorId: bot.id,\n    workspaceId: \"00000000-0000-0000-0000-000000000000\",\n    workspaceRoleId: developer.then(developer =\u003e developer.id),\n});\n// ASSIGNING WORKSPACE ACCESS TO A TEAM\n// Assign the Workspace Role to the Team\nconst teamDeveloper = new prefect.WorkspaceAccess(\"teamDeveloper\", {\n    accessorType: \"TEAM\",\n    accessorId: \"11111111-1111-1111-1111-111111111111\",\n    workspaceId: \"00000000-0000-0000-0000-000000000000\",\n    workspaceRoleId: developer.then(developer =\u003e developer.id),\n});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\ndeveloper = prefect.get_workspace_role(name=\"Developer\")\nmarvin = prefect.get_account_member(email=\"marvin@prefect.io\")\n# Assign the Workspace Role to the Account Member\nmarvin_developer = prefect.WorkspaceAccess(\"marvinDeveloper\",\n    accessor_type=\"USER\",\n    accessor_id=prefect_account_member[\"marvin\"][\"user_id\"],\n    workspace_id=\"00000000-0000-0000-0000-000000000000\",\n    workspace_role_id=developer.id)\n# ASSIGNING WORKSPACE ACCESS TO A SERVICE ACCOUNT\n# Create a Service Account resource\nbot = prefect.ServiceAccount(\"bot\")\n# Assign the Workspace Role to the Service Account\nbot_developer = prefect.WorkspaceAccess(\"botDeveloper\",\n    accessor_type=\"SERVICE_ACCOUNT\",\n    accessor_id=bot.id,\n    workspace_id=\"00000000-0000-0000-0000-000000000000\",\n    workspace_role_id=developer.id)\n# ASSIGNING WORKSPACE ACCESS TO A TEAM\n# Assign the Workspace Role to the Team\nteam_developer = prefect.WorkspaceAccess(\"teamDeveloper\",\n    accessor_type=\"TEAM\",\n    accessor_id=\"11111111-1111-1111-1111-111111111111\",\n    workspace_id=\"00000000-0000-0000-0000-000000000000\",\n    workspace_role_id=developer.id)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var developer = Prefect.GetWorkspaceRole.Invoke(new()\n    {\n        Name = \"Developer\",\n    });\n\n    var marvin = Prefect.GetAccountMember.Invoke(new()\n    {\n        Email = \"marvin@prefect.io\",\n    });\n\n    // Assign the Workspace Role to the Account Member\n    var marvinDeveloper = new Prefect.WorkspaceAccess(\"marvinDeveloper\", new()\n    {\n        AccessorType = \"USER\",\n        AccessorId = prefect_account_member.Marvin.User_id,\n        WorkspaceId = \"00000000-0000-0000-0000-000000000000\",\n        WorkspaceRoleId = developer.Apply(getWorkspaceRoleResult =\u003e getWorkspaceRoleResult.Id),\n    });\n\n    // ASSIGNING WORKSPACE ACCESS TO A SERVICE ACCOUNT\n    // Create a Service Account resource\n    var bot = new Prefect.ServiceAccount(\"bot\");\n\n    // Assign the Workspace Role to the Service Account\n    var botDeveloper = new Prefect.WorkspaceAccess(\"botDeveloper\", new()\n    {\n        AccessorType = \"SERVICE_ACCOUNT\",\n        AccessorId = bot.Id,\n        WorkspaceId = \"00000000-0000-0000-0000-000000000000\",\n        WorkspaceRoleId = developer.Apply(getWorkspaceRoleResult =\u003e getWorkspaceRoleResult.Id),\n    });\n\n    // ASSIGNING WORKSPACE ACCESS TO A TEAM\n    // Assign the Workspace Role to the Team\n    var teamDeveloper = new Prefect.WorkspaceAccess(\"teamDeveloper\", new()\n    {\n        AccessorType = \"TEAM\",\n        AccessorId = \"11111111-1111-1111-1111-111111111111\",\n        WorkspaceId = \"00000000-0000-0000-0000-000000000000\",\n        WorkspaceRoleId = developer.Apply(getWorkspaceRoleResult =\u003e getWorkspaceRoleResult.Id),\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\tdeveloper, err := prefect.LookupWorkspaceRole(ctx, \u0026prefect.LookupWorkspaceRoleArgs{\n\t\t\tName: \"Developer\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = prefect.GetAccountMember(ctx, \u0026prefect.GetAccountMemberArgs{\n\t\t\tEmail: \"marvin@prefect.io\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t// Assign the Workspace Role to the Account Member\n\t\t_, err = prefect.NewWorkspaceAccess(ctx, \"marvinDeveloper\", \u0026prefect.WorkspaceAccessArgs{\n\t\t\tAccessorType:    pulumi.String(\"USER\"),\n\t\t\tAccessorId:      pulumi.Any(prefect_account_member.Marvin.User_id),\n\t\t\tWorkspaceId:     pulumi.String(\"00000000-0000-0000-0000-000000000000\"),\n\t\t\tWorkspaceRoleId: pulumi.String(developer.Id),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t// ASSIGNING WORKSPACE ACCESS TO A SERVICE ACCOUNT\n\t\t// Create a Service Account resource\n\t\tbot, err := prefect.NewServiceAccount(ctx, \"bot\", nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t// Assign the Workspace Role to the Service Account\n\t\t_, err = prefect.NewWorkspaceAccess(ctx, \"botDeveloper\", \u0026prefect.WorkspaceAccessArgs{\n\t\t\tAccessorType:    pulumi.String(\"SERVICE_ACCOUNT\"),\n\t\t\tAccessorId:      bot.ID(),\n\t\t\tWorkspaceId:     pulumi.String(\"00000000-0000-0000-0000-000000000000\"),\n\t\t\tWorkspaceRoleId: pulumi.String(developer.Id),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t// Assign the Workspace Role to the Team\n\t\t_, err = prefect.NewWorkspaceAccess(ctx, \"teamDeveloper\", \u0026prefect.WorkspaceAccessArgs{\n\t\t\tAccessorType:    pulumi.String(\"TEAM\"),\n\t\t\tAccessorId:      pulumi.String(\"11111111-1111-1111-1111-111111111111\"),\n\t\t\tWorkspaceId:     pulumi.String(\"00000000-0000-0000-0000-000000000000\"),\n\t\t\tWorkspaceRoleId: pulumi.String(developer.Id),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.PrefectFunctions;\nimport com.pulumi.prefect.inputs.GetWorkspaceRoleArgs;\nimport com.pulumi.prefect.inputs.GetAccountMemberArgs;\nimport com.pulumi.prefect.WorkspaceAccess;\nimport com.pulumi.prefect.WorkspaceAccessArgs;\nimport com.pulumi.prefect.ServiceAccount;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var developer = PrefectFunctions.getWorkspaceRole(GetWorkspaceRoleArgs.builder()\n            .name(\"Developer\")\n            .build());\n\n        final var marvin = PrefectFunctions.getAccountMember(GetAccountMemberArgs.builder()\n            .email(\"marvin@prefect.io\")\n            .build());\n\n        // Assign the Workspace Role to the Account Member\n        var marvinDeveloper = new WorkspaceAccess(\"marvinDeveloper\", WorkspaceAccessArgs.builder()        \n            .accessorType(\"USER\")\n            .accessorId(prefect_account_member.marvin().user_id())\n            .workspaceId(\"00000000-0000-0000-0000-000000000000\")\n            .workspaceRoleId(developer.applyValue(getWorkspaceRoleResult -\u003e getWorkspaceRoleResult.id()))\n            .build());\n\n        // ASSIGNING WORKSPACE ACCESS TO A SERVICE ACCOUNT\n        // Create a Service Account resource\n        var bot = new ServiceAccount(\"bot\");\n\n        // Assign the Workspace Role to the Service Account\n        var botDeveloper = new WorkspaceAccess(\"botDeveloper\", WorkspaceAccessArgs.builder()        \n            .accessorType(\"SERVICE_ACCOUNT\")\n            .accessorId(bot.id())\n            .workspaceId(\"00000000-0000-0000-0000-000000000000\")\n            .workspaceRoleId(developer.applyValue(getWorkspaceRoleResult -\u003e getWorkspaceRoleResult.id()))\n            .build());\n\n        // ASSIGNING WORKSPACE ACCESS TO A TEAM\n        // Assign the Workspace Role to the Team\n        var teamDeveloper = new WorkspaceAccess(\"teamDeveloper\", WorkspaceAccessArgs.builder()        \n            .accessorType(\"TEAM\")\n            .accessorId(\"11111111-1111-1111-1111-111111111111\")\n            .workspaceId(\"00000000-0000-0000-0000-000000000000\")\n            .workspaceRoleId(developer.applyValue(getWorkspaceRoleResult -\u003e getWorkspaceRoleResult.id()))\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  # Assign the Workspace Role to the Account Member\n  marvinDeveloper:\n    type: prefect:WorkspaceAccess\n    properties:\n      accessorType: USER\n      accessorId: ${prefect_account_member.marvin.user_id}\n      workspaceId: 00000000-0000-0000-0000-000000000000\n      workspaceRoleId: ${developer.id}\n  # ASSIGNING WORKSPACE ACCESS TO A SERVICE ACCOUNT\n  # Create a Service Account resource\n  bot:\n    type: prefect:ServiceAccount\n  # Assign the Workspace Role to the Service Account\n  botDeveloper: # ASSIGNING WORKSPACE ACCESS TO A TEAM\n    type: prefect:WorkspaceAccess\n    properties:\n      accessorType: SERVICE_ACCOUNT\n      accessorId: ${bot.id}\n      workspaceId: 00000000-0000-0000-0000-000000000000\n      workspaceRoleId: ${developer.id}\n  # Assign the Workspace Role to the Team\n  teamDeveloper:\n    type: prefect:WorkspaceAccess\n    properties:\n      accessorType: TEAM\n      accessorId: 11111111-1111-1111-1111-111111111111\n      workspaceId: 00000000-0000-0000-0000-000000000000\n      workspaceRoleId: ${developer.id}\nvariables:\n  developer:\n    fn::invoke:\n      Function: prefect:getWorkspaceRole\n      Arguments:\n        name: Developer\n  marvin:\n    fn::invoke:\n      Function: prefect:getAccountMember\n      Arguments:\n        email: marvin@prefect.io\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "properties": {
+                "accessorId": {
+                    "type": "string",
+                    "description": "ID (UUID) of accessor to the workspace. This can be an `account_member.user_id` or `service_account.id`\n"
+                },
+                "accessorType": {
+                    "type": "string",
+                    "description": "USER | SERVICE_ACCOUNT | TEAM\n"
+                },
+                "accountId": {
+                    "type": "string",
+                    "description": "Account ID (UUID) where the workspace is located\n"
+                },
+                "workspaceId": {
+                    "type": "string",
+                    "description": "Workspace ID (UUID) to grant access to\n"
+                },
+                "workspaceRoleId": {
+                    "type": "string",
+                    "description": "Workspace Role ID (UUID) to grant to accessor\n"
+                }
+            },
+            "required": [
+                "accessorId",
+                "accessorType",
+                "workspaceRoleId"
+            ],
+            "inputProperties": {
+                "accessorId": {
+                    "type": "string",
+                    "description": "ID (UUID) of accessor to the workspace. This can be an `account_member.user_id` or `service_account.id`\n"
+                },
+                "accessorType": {
+                    "type": "string",
+                    "description": "USER | SERVICE_ACCOUNT | TEAM\n"
+                },
+                "accountId": {
+                    "type": "string",
+                    "description": "Account ID (UUID) where the workspace is located\n"
+                },
+                "workspaceId": {
+                    "type": "string",
+                    "description": "Workspace ID (UUID) to grant access to\n"
+                },
+                "workspaceRoleId": {
+                    "type": "string",
+                    "description": "Workspace Role ID (UUID) to grant to accessor\n"
+                }
+            },
+            "requiredInputs": [
+                "accessorId",
+                "accessorType",
+                "workspaceRoleId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering WorkspaceAccess resources.\n",
+                "properties": {
+                    "accessorId": {
+                        "type": "string",
+                        "description": "ID (UUID) of accessor to the workspace. This can be an `account_member.user_id` or `service_account.id`\n"
+                    },
+                    "accessorType": {
+                        "type": "string",
+                        "description": "USER | SERVICE_ACCOUNT | TEAM\n"
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID) where the workspace is located\n"
+                    },
+                    "workspaceId": {
+                        "type": "string",
+                        "description": "Workspace ID (UUID) to grant access to\n"
+                    },
+                    "workspaceRoleId": {
+                        "type": "string",
+                        "description": "Workspace Role ID (UUID) to grant to accessor\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "prefect:index/workspaceRole:WorkspaceRole": {
+            "description": "The resource `workspace_role` represents a Prefect Cloud Workspace Role. Workspace Roles hold a set of permissions to a specific Workspace, and can be attached to an accessor (User or Service Account) to grant access to the Workspace.\n\nTo obtain a list of available scopes, please refer to the `GET /api/workspace_scopes` [API](https://app.prefect.cloud/api/docs#tag/Workspace-Scopes/operation/get_workspace_scopes_api_workspace_scopes_get)\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst example = new prefect.WorkspaceRole(\"example\", {scopes: [\n    \"manage_blocks\",\n    \"see_flows\",\n]});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nexample = prefect.WorkspaceRole(\"example\", scopes=[\n    \"manage_blocks\",\n    \"see_flows\",\n])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Prefect.WorkspaceRole(\"example\", new()\n    {\n        Scopes = new[]\n        {\n            \"manage_blocks\",\n            \"see_flows\",\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.NewWorkspaceRole(ctx, \"example\", \u0026prefect.WorkspaceRoleArgs{\n\t\t\tScopes: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"manage_blocks\"),\n\t\t\t\tpulumi.String(\"see_flows\"),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.WorkspaceRole;\nimport com.pulumi.prefect.WorkspaceRoleArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new WorkspaceRole(\"example\", WorkspaceRoleArgs.builder()        \n            .scopes(            \n                \"manage_blocks\",\n                \"see_flows\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: prefect:WorkspaceRole\n    properties:\n      scopes:\n        - manage_blocks\n        - see_flows\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\nPrefect Workspace Roles can be imported using the workspace role's UUID\n\n```sh\n$ pulumi import prefect:index/workspaceRole:WorkspaceRole example 00000000-0000-0000-0000-000000000000\n```\n\n",
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                },
+                "created": {
+                    "type": "string",
+                    "description": "Timestamp of when the resource was created (RFC3339)\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the Workspace Role\n"
+                },
+                "inheritedRoleId": {
+                    "type": "string",
+                    "description": "Workspace Role ID (UUID), whose permissions are inherited by this Workspace Role\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the Workspace Role\n"
+                },
+                "scopes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of scopes linked to the Workspace Role\n"
+                },
+                "updated": {
+                    "type": "string",
+                    "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                }
+            },
+            "required": [
+                "accountId",
+                "created",
+                "description",
+                "name",
+                "updated"
+            ],
+            "inputProperties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the Workspace Role\n"
+                },
+                "inheritedRoleId": {
+                    "type": "string",
+                    "description": "Workspace Role ID (UUID), whose permissions are inherited by this Workspace Role\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the Workspace Role\n"
+                },
+                "scopes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of scopes linked to the Workspace Role\n"
+                }
+            },
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering WorkspaceRole resources.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was created (RFC3339)\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the Workspace Role\n"
+                    },
+                    "inheritedRoleId": {
+                        "type": "string",
+                        "description": "Workspace Role ID (UUID), whose permissions are inherited by this Workspace Role\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the Workspace Role\n"
+                    },
+                    "scopes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of scopes linked to the Workspace Role\n"
+                    },
+                    "updated": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "functions": {
+        "prefect:index/getAccount:getAccount": {
+            "description": "Get information about an existing Account.\n\u003cbr\u003e\nUse this data source to obtain account-level attributes\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst myOrganization = prefect.getAccount({});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nmy_organization = prefect.get_account()\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var myOrganization = Prefect.GetAccount.Invoke();\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.LookupAccount(ctx, nil, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.PrefectFunctions;\nimport com.pulumi.prefect.inputs.GetAccountArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var myOrganization = PrefectFunctions.getAccount();\n\n    }\n}\n```\n```yaml\nvariables:\n  myOrganization:\n    fn::invoke:\n      Function: prefect:getAccount\n      Arguments: {}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getAccount.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Account ID (UUID)\n"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAccount.\n",
+                "properties": {
+                    "allowPublicWorkspaces": {
+                        "type": "boolean",
+                        "description": "Whether or not this account allows public workspaces\n"
+                    },
+                    "billingEmail": {
+                        "type": "string",
+                        "description": "Billing email to apply to the account's Stripe customer\n"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was created (RFC3339)\n"
+                    },
+                    "handle": {
+                        "type": "string",
+                        "description": "Unique handle of the account\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Account ID (UUID)\n"
+                    },
+                    "link": {
+                        "type": "string",
+                        "description": "An optional for an external url associated with the account, e.g. https://prefect.io/\n"
+                    },
+                    "location": {
+                        "type": "string",
+                        "description": "An optional physical location for the account, e.g. Washington, D.C.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the account\n"
+                    },
+                    "updated": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "allowPublicWorkspaces",
+                    "billingEmail",
+                    "created",
+                    "handle",
+                    "link",
+                    "location",
+                    "name",
+                    "updated"
+                ]
+            }
+        },
+        "prefect:index/getAccountMember:getAccountMember": {
+            "description": "Get information about an existing Account Member (user)\tby their email.\n\u003cbr\u003e\nUse this data source to obtain user or actor IDs to manage Workspace Access.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst marvin = prefect.getAccountMember({\n    email: \"marvin@prefect.io\",\n});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nmarvin = prefect.get_account_member(email=\"marvin@prefect.io\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var marvin = Prefect.GetAccountMember.Invoke(new()\n    {\n        Email = \"marvin@prefect.io\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.GetAccountMember(ctx, \u0026prefect.GetAccountMemberArgs{\n\t\t\tEmail: \"marvin@prefect.io\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.PrefectFunctions;\nimport com.pulumi.prefect.inputs.GetAccountMemberArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var marvin = PrefectFunctions.getAccountMember(GetAccountMemberArgs.builder()\n            .email(\"marvin@prefect.io\")\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  marvin:\n    fn::invoke:\n      Function: prefect:getAccountMember\n      Arguments:\n        email: marvin@prefect.io\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getAccountMember.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID) where the member resides\n"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Member email\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "email"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAccountMember.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID) where the member resides\n"
+                    },
+                    "accountRoleId": {
+                        "type": "string",
+                        "description": "Acount Role ID (UUID)\n"
+                    },
+                    "accountRoleName": {
+                        "type": "string",
+                        "description": "Name of Account Role assigned to member\n"
+                    },
+                    "actorId": {
+                        "type": "string",
+                        "description": "Actor ID (UUID)\n"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Member email\n"
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "description": "Member's first name\n"
+                    },
+                    "handle": {
+                        "type": "string",
+                        "description": "Member handle, or a human-readable identifier\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Account Member ID (UUID)\n"
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "description": "Member's last name\n"
+                    },
+                    "userId": {
+                        "type": "string",
+                        "description": "User ID (UUID)\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "accountRoleId",
+                    "accountRoleName",
+                    "actorId",
+                    "email",
+                    "firstName",
+                    "handle",
+                    "id",
+                    "lastName",
+                    "userId"
+                ]
+            }
+        },
+        "prefect:index/getAccountMembers:getAccountMembers": {
+            "description": "Get information about all members of account.\n\u003cbr\u003e\nUse this data source to obtain user or actor IDs to manage Workspace Access.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst allMembers = prefect.getAccountMembers({});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nall_members = prefect.get_account_members()\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var allMembers = Prefect.GetAccountMembers.Invoke();\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.GetAccountMembers(ctx, nil, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.PrefectFunctions;\nimport com.pulumi.prefect.inputs.GetAccountMembersArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var allMembers = PrefectFunctions.getAccountMembers();\n\n    }\n}\n```\n```yaml\nvariables:\n  allMembers:\n    fn::invoke:\n      Function: prefect:getAccountMembers\n      Arguments: {}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getAccountMembers.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAccountMembers.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "members": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/prefect:index/getAccountMembersMember:getAccountMembersMember"
+                        },
+                        "description": "List of Account members of an account\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "members",
+                    "id"
+                ]
+            }
+        },
+        "prefect:index/getAccountRole:getAccountRole": {
+            "description": "Get information about an existing Workspace Role.\n\u003cbr\u003e\nUse this data source read down the pre-defined Roles, to manage User and Service Account access.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst owner = prefect.getAccountRole({\n    name: \"Admin\",\n});\nconst member = prefect.getAccountRole({\n    name: \"Member\",\n});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nowner = prefect.get_account_role(name=\"Admin\")\nmember = prefect.get_account_role(name=\"Member\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var owner = Prefect.GetAccountRole.Invoke(new()\n    {\n        Name = \"Admin\",\n    });\n\n    var member = Prefect.GetAccountRole.Invoke(new()\n    {\n        Name = \"Member\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.GetAccountRole(ctx, \u0026prefect.GetAccountRoleArgs{\n\t\t\tName: \"Admin\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = prefect.GetAccountRole(ctx, \u0026prefect.GetAccountRoleArgs{\n\t\t\tName: \"Member\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.PrefectFunctions;\nimport com.pulumi.prefect.inputs.GetAccountRoleArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var owner = PrefectFunctions.getAccountRole(GetAccountRoleArgs.builder()\n            .name(\"Admin\")\n            .build());\n\n        final var member = PrefectFunctions.getAccountRole(GetAccountRoleArgs.builder()\n            .name(\"Member\")\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  owner:\n    fn::invoke:\n      Function: prefect:getAccountRole\n      Arguments:\n        name: Admin\n  member:\n    fn::invoke:\n      Function: prefect:getAccountRole\n      Arguments:\n        name: Member\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getAccountRole.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID) where the resource resides\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the Account Role\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "name"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAccountRole.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID) where the resource resides\n"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was created (RFC3339)\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Account Role ID (UUID)\n"
+                    },
+                    "isSystemRole": {
+                        "type": "boolean",
+                        "description": "Boolean specifying if the Account Role is a system role\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the Account Role\n"
+                    },
+                    "permissions": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of permissions linked to the Account Role\n"
+                    },
+                    "updated": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "created",
+                    "id",
+                    "isSystemRole",
+                    "name",
+                    "permissions",
+                    "updated"
+                ]
+            }
+        },
+        "prefect:index/getServiceAccount:getServiceAccount": {
+            "description": "Get information about an existing Service Account, by name or ID.\n\u003cbr\u003e\nUse this data source to obtain service account-level attributes, such as ID.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst bot = prefect.getServiceAccount({\n    name: \"my-bot-name\",\n});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nbot = prefect.get_service_account(name=\"my-bot-name\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var bot = Prefect.GetServiceAccount.Invoke(new()\n    {\n        Name = \"my-bot-name\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.LookupServiceAccount(ctx, \u0026prefect.LookupServiceAccountArgs{\n\t\t\tName: pulumi.StringRef(\"my-bot-name\"),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.PrefectFunctions;\nimport com.pulumi.prefect.inputs.GetServiceAccountArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var bot = PrefectFunctions.getServiceAccount(GetServiceAccountArgs.builder()\n            .name(\"my-bot-name\")\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  bot:\n    fn::invoke:\n      Function: prefect:getServiceAccount\n      Arguments:\n        name: my-bot-name\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getServiceAccount.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Service Account ID (UUID)\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the service account\n"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getServiceAccount.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "accountRoleName": {
+                        "type": "string",
+                        "description": "Account Role name of the service account\n"
+                    },
+                    "apiKey": {
+                        "type": "string",
+                        "description": "API Key associated with the service account\n"
+                    },
+                    "apiKeyCreated": {
+                        "type": "string",
+                        "description": "Date and time that the API Key was created in RFC 3339 format\n"
+                    },
+                    "apiKeyExpiration": {
+                        "type": "string",
+                        "description": "Date and time that the API Key expires in RFC 3339 format\n"
+                    },
+                    "apiKeyId": {
+                        "type": "string",
+                        "description": "API Key ID associated with the service account. NOTE: this is always null for reads. If you need the API Key ID, use the `prefect.ServiceAccount` resource instead.\n"
+                    },
+                    "apiKeyName": {
+                        "type": "string",
+                        "description": "API Key Name associated with the service account\n"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was created (RFC3339)\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Service Account ID (UUID)\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the service account\n"
+                    },
+                    "updated": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "accountRoleName",
+                    "apiKey",
+                    "apiKeyCreated",
+                    "apiKeyExpiration",
+                    "apiKeyId",
+                    "apiKeyName",
+                    "created",
+                    "id",
+                    "name",
+                    "updated"
+                ]
+            }
+        },
+        "prefect:index/getTeam:getTeam": {
+            "description": "Get information about an existing Team by their name.\n\u003cbr\u003e\nUse this data source to obtain team IDs to manage Workspace Access.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst myTeam = prefect.getTeam({\n    name: \"my-team\",\n});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nmy_team = prefect.get_team(name=\"my-team\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var myTeam = Prefect.GetTeam.Invoke(new()\n    {\n        Name = \"my-team\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.GetTeam(ctx, \u0026prefect.GetTeamArgs{\n\t\t\tName: pulumi.StringRef(\"my-team\"),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.PrefectFunctions;\nimport com.pulumi.prefect.inputs.GetTeamArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var myTeam = PrefectFunctions.getTeam(GetTeamArgs.builder()\n            .name(\"my-team\")\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  myTeam:\n    fn::invoke:\n      Function: prefect:getTeam\n      Arguments:\n        name: my-team\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getTeam.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of Team\n"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getTeam.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Date and time of the team creation in RFC 3339 format\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of team\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Team ID (UUID)\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of Team\n"
+                    },
+                    "updated": {
+                        "type": "string",
+                        "description": "Date and time that the team was last updated in RFC 3339 format\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "created",
+                    "description",
+                    "id",
+                    "name",
+                    "updated"
+                ]
+            }
+        },
+        "prefect:index/getTeams:getTeams": {
+            "description": "Get information about multiple Teams.\n\u003cbr\u003e\nUse this data source to search for multiple Teams. Defaults to fetching all Teams in the Account.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst allTeams = prefect.getTeams({});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nall_teams = prefect.get_teams()\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var allTeams = Prefect.GetTeams.Invoke();\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.GetTeams(ctx, nil, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.PrefectFunctions;\nimport com.pulumi.prefect.inputs.GetTeamsArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var allTeams = PrefectFunctions.getTeams();\n\n    }\n}\n```\n```yaml\nvariables:\n  allTeams:\n    fn::invoke:\n      Function: prefect:getTeams\n      Arguments: {}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getTeams.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getTeams.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "teams": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/prefect:index/getTeamsTeam:getTeamsTeam"
+                        },
+                        "description": "Teams returned by the server\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "teams",
+                    "id"
+                ]
+            }
+        },
+        "prefect:index/getVariable:getVariable": {
+            "description": "Get information about an existing Variable by name or ID.\n\u003cbr\u003e\nUse this data source to obtain Variable-specific attributes, such as the value.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst existingById = prefect.getVariable({\n    id: \"00000000-0000-0000-0000-000000000000\",\n});\nconst existingByName = prefect.getVariable({\n    name: \"my_variable_name\",\n});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nexisting_by_id = prefect.get_variable(id=\"00000000-0000-0000-0000-000000000000\")\nexisting_by_name = prefect.get_variable(name=\"my_variable_name\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var existingById = Prefect.GetVariable.Invoke(new()\n    {\n        Id = \"00000000-0000-0000-0000-000000000000\",\n    });\n\n    var existingByName = Prefect.GetVariable.Invoke(new()\n    {\n        Name = \"my_variable_name\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.LookupVariable(ctx, \u0026prefect.LookupVariableArgs{\n\t\t\tId: pulumi.StringRef(\"00000000-0000-0000-0000-000000000000\"),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = prefect.LookupVariable(ctx, \u0026prefect.LookupVariableArgs{\n\t\t\tName: pulumi.StringRef(\"my_variable_name\"),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.PrefectFunctions;\nimport com.pulumi.prefect.inputs.GetVariableArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var existingById = PrefectFunctions.getVariable(GetVariableArgs.builder()\n            .id(\"00000000-0000-0000-0000-000000000000\")\n            .build());\n\n        final var existingByName = PrefectFunctions.getVariable(GetVariableArgs.builder()\n            .name(\"my_variable_name\")\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  existingById:\n    fn::invoke:\n      Function: prefect:getVariable\n      Arguments:\n        id: 00000000-0000-0000-0000-000000000000\n  existingByName:\n    fn::invoke:\n      Function: prefect:getVariable\n      Arguments:\n        name: my_variable_name\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getVariable.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Variable ID (UUID)\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the variable\n"
+                    },
+                    "workspaceId": {
+                        "type": "string",
+                        "description": "Workspace ID (UUID), defaults to the workspace set in the provider\n"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getVariable.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was created (RFC3339)\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Variable ID (UUID)\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the variable\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Tags associated with the variable\n"
+                    },
+                    "updated": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                    },
+                    "value": {
+                        "type": "string",
+                        "description": "Value of the variable\n"
+                    },
+                    "workspaceId": {
+                        "type": "string",
+                        "description": "Workspace ID (UUID), defaults to the workspace set in the provider\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "created",
+                    "id",
+                    "name",
+                    "tags",
+                    "updated",
+                    "value"
+                ]
+            }
+        },
+        "prefect:index/getWorkPool:getWorkPool": {
+            "description": "Get information about an existing Work Pool by name.\n\u003cbr\u003e\nUse this data source to obtain Work Pool-specific attributes.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst myPool = prefect.getWorkPool({\n    name: \"my-work-pool\",\n});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nmy_pool = prefect.get_work_pool(name=\"my-work-pool\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var myPool = Prefect.GetWorkPool.Invoke(new()\n    {\n        Name = \"my-work-pool\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.LookupWorkPool(ctx, \u0026prefect.LookupWorkPoolArgs{\n\t\t\tName: pulumi.StringRef(\"my-work-pool\"),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.PrefectFunctions;\nimport com.pulumi.prefect.inputs.GetWorkPoolArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var myPool = PrefectFunctions.getWorkPool(GetWorkPoolArgs.builder()\n            .name(\"my-work-pool\")\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  myPool:\n    fn::invoke:\n      Function: prefect:getWorkPool\n      Arguments:\n        name: my-work-pool\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getWorkPool.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "concurrencyLimit": {
+                        "type": "integer",
+                        "description": "The concurrency limit applied to this work pool\n"
+                    },
+                    "defaultQueueId": {
+                        "type": "string",
+                        "description": "The ID (UUID) of the default queue associated with this work pool\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the work pool\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Work pool ID (UUID)\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the work pool\n"
+                    },
+                    "workspaceId": {
+                        "type": "string",
+                        "description": "Workspace ID (UUID), defaults to the workspace set in the provider\n"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getWorkPool.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "baseJobTemplate": {
+                        "type": "string",
+                        "description": "The base job template for the work pool, as a JSON string\n"
+                    },
+                    "concurrencyLimit": {
+                        "type": "integer",
+                        "description": "The concurrency limit applied to this work pool\n"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Date and time of the work pool creation in RFC 3339 format\n"
+                    },
+                    "defaultQueueId": {
+                        "type": "string",
+                        "description": "The ID (UUID) of the default queue associated with this work pool\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the work pool\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Work pool ID (UUID)\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the work pool\n"
+                    },
+                    "paused": {
+                        "type": "boolean",
+                        "description": "Whether this work pool is paused\n"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Type of the work pool\n"
+                    },
+                    "updated": {
+                        "type": "string",
+                        "description": "Date and time that the work pool was last updated in RFC 3339 format\n"
+                    },
+                    "workspaceId": {
+                        "type": "string",
+                        "description": "Workspace ID (UUID), defaults to the workspace set in the provider\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "baseJobTemplate",
+                    "concurrencyLimit",
+                    "created",
+                    "defaultQueueId",
+                    "description",
+                    "id",
+                    "name",
+                    "paused",
+                    "type",
+                    "updated"
+                ]
+            }
+        },
+        "prefect:index/getWorkPools:getWorkPools": {
+            "description": "Get information about an multiple Work Pools.\n\u003cbr\u003e\nUse this data source to search for multiple Work Pools. Defaults to fetching all Work Pools in the Workspace.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst allPools = prefect.getWorkPools({});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nall_pools = prefect.get_work_pools()\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var allPools = Prefect.GetWorkPools.Invoke();\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.GetWorkPools(ctx, nil, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.PrefectFunctions;\nimport com.pulumi.prefect.inputs.GetWorkPoolsArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var allPools = PrefectFunctions.getWorkPools();\n\n    }\n}\n```\n```yaml\nvariables:\n  allPools:\n    fn::invoke:\n      Function: prefect:getWorkPools\n      Arguments: {}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getWorkPools.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "filterAnies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Work pool IDs (UUID) to search for (work pools with any matching UUID are returned)\n"
+                    },
+                    "workspaceId": {
+                        "type": "string",
+                        "description": "Workspace ID (UUID), defaults to the workspace set in the provider\n"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getWorkPools.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "filterAnies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Work pool IDs (UUID) to search for (work pools with any matching UUID are returned)\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "workPools": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/prefect:index/getWorkPoolsWorkPool:getWorkPoolsWorkPool"
+                        },
+                        "description": "Work pools returned by the server\n"
+                    },
+                    "workspaceId": {
+                        "type": "string",
+                        "description": "Workspace ID (UUID), defaults to the workspace set in the provider\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "workPools",
+                    "id"
+                ]
+            }
+        },
+        "prefect:index/getWorkerMetadata:getWorkerMetadata": {
+            "description": "Get metadata information about the common Worker types, such as Kubernetes, ECS, etc.\n\u003cbr\u003e\nUse this data source to get the default base job configurations for those common Worker types.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst workerMetadata = prefect.getWorkerMetadata({});\nconst kubernetes = new prefect.WorkPool(\"kubernetes\", {\n    type: \"kubernetes\",\n    workspaceId: data.prefect_workspace.prd.id,\n    paused: false,\n    baseJobTemplate: workerMetadata.then(workerMetadata =\u003e workerMetadata.baseJobConfigs?.kubernetes),\n});\nconst ecs = new prefect.WorkPool(\"ecs\", {\n    type: \"ecs\",\n    workspaceId: data.prefect_workspace.prd.id,\n    paused: false,\n    baseJobTemplate: workerMetadata.then(workerMetadata =\u003e workerMetadata.baseJobConfigs?.ecs),\n});\nconst process = new prefect.WorkPool(\"process\", {\n    type: \"cloud-run:push\",\n    workspaceId: data.prefect_workspace.prd.id,\n    paused: false,\n    baseJobTemplate: workerMetadata.then(workerMetadata =\u003e workerMetadata.baseJobConfigs?.cloudRunPush),\n});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nworker_metadata = prefect.get_worker_metadata()\nkubernetes = prefect.WorkPool(\"kubernetes\",\n    type=\"kubernetes\",\n    workspace_id=data[\"prefect_workspace\"][\"prd\"][\"id\"],\n    paused=False,\n    base_job_template=worker_metadata.base_job_configs.kubernetes)\necs = prefect.WorkPool(\"ecs\",\n    type=\"ecs\",\n    workspace_id=data[\"prefect_workspace\"][\"prd\"][\"id\"],\n    paused=False,\n    base_job_template=worker_metadata.base_job_configs.ecs)\nprocess = prefect.WorkPool(\"process\",\n    type=\"cloud-run:push\",\n    workspace_id=data[\"prefect_workspace\"][\"prd\"][\"id\"],\n    paused=False,\n    base_job_template=worker_metadata.base_job_configs.cloud_run_push)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var workerMetadata = Prefect.GetWorkerMetadata.Invoke();\n\n    var kubernetes = new Prefect.WorkPool(\"kubernetes\", new()\n    {\n        Type = \"kubernetes\",\n        WorkspaceId = data.Prefect_workspace.Prd.Id,\n        Paused = false,\n        BaseJobTemplate = workerMetadata.Apply(getWorkerMetadataResult =\u003e getWorkerMetadataResult.BaseJobConfigs?.Kubernetes),\n    });\n\n    var ecs = new Prefect.WorkPool(\"ecs\", new()\n    {\n        Type = \"ecs\",\n        WorkspaceId = data.Prefect_workspace.Prd.Id,\n        Paused = false,\n        BaseJobTemplate = workerMetadata.Apply(getWorkerMetadataResult =\u003e getWorkerMetadataResult.BaseJobConfigs?.Ecs),\n    });\n\n    var process = new Prefect.WorkPool(\"process\", new()\n    {\n        Type = \"cloud-run:push\",\n        WorkspaceId = data.Prefect_workspace.Prd.Id,\n        Paused = false,\n        BaseJobTemplate = workerMetadata.Apply(getWorkerMetadataResult =\u003e getWorkerMetadataResult.BaseJobConfigs?.CloudRunPush),\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\tworkerMetadata, err := prefect.GetWorkerMetadata(ctx, nil, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = prefect.NewWorkPool(ctx, \"kubernetes\", \u0026prefect.WorkPoolArgs{\n\t\t\tType:            pulumi.String(\"kubernetes\"),\n\t\t\tWorkspaceId:     pulumi.Any(data.Prefect_workspace.Prd.Id),\n\t\t\tPaused:          pulumi.Bool(false),\n\t\t\tBaseJobTemplate: pulumi.String(workerMetadata.BaseJobConfigs.Kubernetes),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = prefect.NewWorkPool(ctx, \"ecs\", \u0026prefect.WorkPoolArgs{\n\t\t\tType:            pulumi.String(\"ecs\"),\n\t\t\tWorkspaceId:     pulumi.Any(data.Prefect_workspace.Prd.Id),\n\t\t\tPaused:          pulumi.Bool(false),\n\t\t\tBaseJobTemplate: pulumi.String(workerMetadata.BaseJobConfigs.Ecs),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = prefect.NewWorkPool(ctx, \"process\", \u0026prefect.WorkPoolArgs{\n\t\t\tType:            pulumi.String(\"cloud-run:push\"),\n\t\t\tWorkspaceId:     pulumi.Any(data.Prefect_workspace.Prd.Id),\n\t\t\tPaused:          pulumi.Bool(false),\n\t\t\tBaseJobTemplate: pulumi.String(workerMetadata.BaseJobConfigs.CloudRunPush),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.PrefectFunctions;\nimport com.pulumi.prefect.WorkPool;\nimport com.pulumi.prefect.WorkPoolArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var workerMetadata = PrefectFunctions.getWorkerMetadata();\n\n        var kubernetes = new WorkPool(\"kubernetes\", WorkPoolArgs.builder()        \n            .type(\"kubernetes\")\n            .workspaceId(data.prefect_workspace().prd().id())\n            .paused(false)\n            .baseJobTemplate(workerMetadata.applyValue(getWorkerMetadataResult -\u003e getWorkerMetadataResult.baseJobConfigs().kubernetes()))\n            .build());\n\n        var ecs = new WorkPool(\"ecs\", WorkPoolArgs.builder()        \n            .type(\"ecs\")\n            .workspaceId(data.prefect_workspace().prd().id())\n            .paused(false)\n            .baseJobTemplate(workerMetadata.applyValue(getWorkerMetadataResult -\u003e getWorkerMetadataResult.baseJobConfigs().ecs()))\n            .build());\n\n        var process = new WorkPool(\"process\", WorkPoolArgs.builder()        \n            .type(\"cloud-run:push\")\n            .workspaceId(data.prefect_workspace().prd().id())\n            .paused(false)\n            .baseJobTemplate(workerMetadata.applyValue(getWorkerMetadataResult -\u003e getWorkerMetadataResult.baseJobConfigs().cloudRunPush()))\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  kubernetes:\n    type: prefect:WorkPool\n    properties:\n      type: kubernetes\n      workspaceId: ${data.prefect_workspace.prd.id}\n      paused: false\n      baseJobTemplate: ${workerMetadata.baseJobConfigs.kubernetes}\n  ecs:\n    type: prefect:WorkPool\n    properties:\n      type: ecs\n      workspaceId: ${data.prefect_workspace.prd.id}\n      paused: false\n      baseJobTemplate: ${workerMetadata.baseJobConfigs.ecs}\n  process:\n    type: prefect:WorkPool\n    properties:\n      type: cloud-run:push\n      workspaceId: ${data.prefect_workspace.prd.id}\n      paused: false\n      baseJobTemplate: ${workerMetadata.baseJobConfigs.cloudRunPush}\nvariables:\n  workerMetadata:\n    fn::invoke:\n      Function: prefect:getWorkerMetadata\n      Arguments: {}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "outputs": {
+                "description": "A collection of values returned by getWorkerMetadata.\n",
+                "properties": {
+                    "baseJobConfigs": {
+                        "$ref": "#/types/prefect:index/getWorkerMetadataBaseJobConfigs:getWorkerMetadataBaseJobConfigs",
+                        "description": "A map of default base job configurations (JSON) for each of the primary worker types\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "baseJobConfigs",
+                    "id"
+                ]
+            }
+        },
+        "prefect:index/getWorkspace:getWorkspace": {
+            "description": "Get information about an existing Workspace by handle.\n\u003cbr\u003e\nUse this data source to obtain Workspace IDs\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst productionEnvironment = prefect.getWorkspace({\n    id: \"00000000-0000-0000-0000-000000000000\",\n});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nproduction_environment = prefect.get_workspace(id=\"00000000-0000-0000-0000-000000000000\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var productionEnvironment = Prefect.GetWorkspace.Invoke(new()\n    {\n        Id = \"00000000-0000-0000-0000-000000000000\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.LookupWorkspace(ctx, \u0026prefect.LookupWorkspaceArgs{\n\t\t\tId: pulumi.StringRef(\"00000000-0000-0000-0000-000000000000\"),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.PrefectFunctions;\nimport com.pulumi.prefect.inputs.GetWorkspaceArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var productionEnvironment = PrefectFunctions.getWorkspace(GetWorkspaceArgs.builder()\n            .id(\"00000000-0000-0000-0000-000000000000\")\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  productionEnvironment:\n    fn::invoke:\n      Function: prefect:getWorkspace\n      Arguments:\n        id: 00000000-0000-0000-0000-000000000000\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getWorkspace.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "handle": {
+                        "type": "string",
+                        "description": "Unique handle for the workspace\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Workspace ID (UUID)\n"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getWorkspace.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID), defaults to the account set in the provider\n"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was created (RFC3339)\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description for the workspace\n"
+                    },
+                    "handle": {
+                        "type": "string",
+                        "description": "Unique handle for the workspace\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Workspace ID (UUID)\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the workspace\n"
+                    },
+                    "updated": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "created",
+                    "description",
+                    "handle",
+                    "id",
+                    "name",
+                    "updated"
+                ]
+            }
+        },
+        "prefect:index/getWorkspaceRole:getWorkspaceRole": {
+            "description": "Get information about an existing Workspace Role.\n\u003cbr\u003e\nUse this data source read down the pre-defined Roles, to manage User and Service Account access.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as prefect from \"@pulumi/prefect\";\n\nconst owner = prefect.getWorkspaceRole({\n    name: \"Owner\",\n});\nconst worker = prefect.getWorkspaceRole({\n    name: \"Worker\",\n});\nconst developer = prefect.getWorkspaceRole({\n    name: \"Developer\",\n});\nconst viewer = prefect.getWorkspaceRole({\n    name: \"Viewer\",\n});\nconst runner = prefect.getWorkspaceRole({\n    name: \"Runner\",\n});\n```\n```python\nimport pulumi\nimport pulumi_prefect as prefect\n\nowner = prefect.get_workspace_role(name=\"Owner\")\nworker = prefect.get_workspace_role(name=\"Worker\")\ndeveloper = prefect.get_workspace_role(name=\"Developer\")\nviewer = prefect.get_workspace_role(name=\"Viewer\")\nrunner = prefect.get_workspace_role(name=\"Runner\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Prefect = Pulumi.Prefect;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var owner = Prefect.GetWorkspaceRole.Invoke(new()\n    {\n        Name = \"Owner\",\n    });\n\n    var worker = Prefect.GetWorkspaceRole.Invoke(new()\n    {\n        Name = \"Worker\",\n    });\n\n    var developer = Prefect.GetWorkspaceRole.Invoke(new()\n    {\n        Name = \"Developer\",\n    });\n\n    var viewer = Prefect.GetWorkspaceRole.Invoke(new()\n    {\n        Name = \"Viewer\",\n    });\n\n    var runner = Prefect.GetWorkspaceRole.Invoke(new()\n    {\n        Name = \"Runner\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n\t\"github.com/ru5j4r0/pulumi-prefect/sdk/go/prefect\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := prefect.LookupWorkspaceRole(ctx, \u0026prefect.LookupWorkspaceRoleArgs{\n\t\t\tName: \"Owner\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = prefect.LookupWorkspaceRole(ctx, \u0026prefect.LookupWorkspaceRoleArgs{\n\t\t\tName: \"Worker\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = prefect.LookupWorkspaceRole(ctx, \u0026prefect.LookupWorkspaceRoleArgs{\n\t\t\tName: \"Developer\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = prefect.LookupWorkspaceRole(ctx, \u0026prefect.LookupWorkspaceRoleArgs{\n\t\t\tName: \"Viewer\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = prefect.LookupWorkspaceRole(ctx, \u0026prefect.LookupWorkspaceRoleArgs{\n\t\t\tName: \"Runner\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.prefect.PrefectFunctions;\nimport com.pulumi.prefect.inputs.GetWorkspaceRoleArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var owner = PrefectFunctions.getWorkspaceRole(GetWorkspaceRoleArgs.builder()\n            .name(\"Owner\")\n            .build());\n\n        final var worker = PrefectFunctions.getWorkspaceRole(GetWorkspaceRoleArgs.builder()\n            .name(\"Worker\")\n            .build());\n\n        final var developer = PrefectFunctions.getWorkspaceRole(GetWorkspaceRoleArgs.builder()\n            .name(\"Developer\")\n            .build());\n\n        final var viewer = PrefectFunctions.getWorkspaceRole(GetWorkspaceRoleArgs.builder()\n            .name(\"Viewer\")\n            .build());\n\n        final var runner = PrefectFunctions.getWorkspaceRole(GetWorkspaceRoleArgs.builder()\n            .name(\"Runner\")\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  owner:\n    fn::invoke:\n      Function: prefect:getWorkspaceRole\n      Arguments:\n        name: Owner\n  worker:\n    fn::invoke:\n      Function: prefect:getWorkspaceRole\n      Arguments:\n        name: Worker\n  developer:\n    fn::invoke:\n      Function: prefect:getWorkspaceRole\n      Arguments:\n        name: Developer\n  viewer:\n    fn::invoke:\n      Function: prefect:getWorkspaceRole\n      Arguments:\n        name: Viewer\n  runner:\n    fn::invoke:\n      Function: prefect:getWorkspaceRole\n      Arguments:\n        name: Runner\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getWorkspaceRole.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID) where Workspace Role resides\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the Workspace Role\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "name"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getWorkspaceRole.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID (UUID) where Workspace Role resides\n"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was created (RFC3339)\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the Workspace Role\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Workspace Role ID (UUID)\n"
+                    },
+                    "inheritedRoleId": {
+                        "type": "string",
+                        "description": "Workspace Role ID (UUID), whose permissions are inherited by this Workspace Role\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the Workspace Role\n"
+                    },
+                    "scopes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of scopes linked to the Workspace Role\n"
+                    },
+                    "updated": {
+                        "type": "string",
+                        "description": "Timestamp of when the resource was updated (RFC3339)\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "created",
+                    "description",
+                    "id",
+                    "inheritedRoleId",
+                    "name",
+                    "scopes",
+                    "updated"
+                ]
+            }
+        }
+    }
+}

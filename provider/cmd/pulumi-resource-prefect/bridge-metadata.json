@@ -1,0 +1,112 @@
+{
+    "auto-aliasing": {
+        "resources": {
+            "prefect_account": {
+                "current": "prefect:index/account:Account"
+            },
+            "prefect_service_account": {
+                "current": "prefect:index/serviceAccount:ServiceAccount"
+            },
+            "prefect_variable": {
+                "current": "prefect:index/variable:Variable",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "prefect_work_pool": {
+                "current": "prefect:index/workPool:WorkPool"
+            },
+            "prefect_workspace": {
+                "current": "prefect:index/workspace:Workspace"
+            },
+            "prefect_workspace_access": {
+                "current": "prefect:index/workspaceAccess:WorkspaceAccess"
+            },
+            "prefect_workspace_role": {
+                "current": "prefect:index/workspaceRole:WorkspaceRole",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            }
+        },
+        "datasources": {
+            "prefect_account": {
+                "current": "prefect:index/getAccount:getAccount"
+            },
+            "prefect_account_member": {
+                "current": "prefect:index/getAccountMember:getAccountMember"
+            },
+            "prefect_account_members": {
+                "current": "prefect:index/getAccountMembers:getAccountMembers",
+                "fields": {
+                    "members": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "prefect_account_role": {
+                "current": "prefect:index/getAccountRole:getAccountRole",
+                "fields": {
+                    "permissions": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "prefect_service_account": {
+                "current": "prefect:index/getServiceAccount:getServiceAccount"
+            },
+            "prefect_team": {
+                "current": "prefect:index/getTeam:getTeam"
+            },
+            "prefect_teams": {
+                "current": "prefect:index/getTeams:getTeams",
+                "fields": {
+                    "teams": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "prefect_variable": {
+                "current": "prefect:index/getVariable:getVariable",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "prefect_work_pool": {
+                "current": "prefect:index/getWorkPool:getWorkPool"
+            },
+            "prefect_work_pools": {
+                "current": "prefect:index/getWorkPools:getWorkPools",
+                "fields": {
+                    "filter_any": {
+                        "maxItemsOne": false
+                    },
+                    "work_pools": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "prefect_worker_metadata": {
+                "current": "prefect:index/getWorkerMetadata:getWorkerMetadata"
+            },
+            "prefect_workspace": {
+                "current": "prefect:index/getWorkspace:getWorkspace"
+            },
+            "prefect_workspace_role": {
+                "current": "prefect:index/getWorkspaceRole:getWorkspaceRole",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            }
+        }
+    },
+    "auto-settings": {}
+}

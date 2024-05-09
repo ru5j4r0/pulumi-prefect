@@ -1,0 +1,8 @@
+{
+	"go.diagnostic.vulncheck": "Imports",
+	"go.formatTool": "gofumpt",
+	"go.lintTool": "golangci-lint",
+	"go.showWelcome": false,
+	"go.survey.prompt": false,
+	"go.toolsManagement.autoUpdate": true
+}

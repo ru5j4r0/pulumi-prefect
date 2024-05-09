@@ -3,6 +3,13 @@
 {
   "name": "TFProvider",
   "build": {
-      "dockerfile": "Dockerfile"
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.Go"
+      ]
+    }
   }
 }
