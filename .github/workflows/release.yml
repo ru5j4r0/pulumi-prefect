@@ -15,7 +15,7 @@ jobs:
     - name: Install Go
       uses: actions/setup-go@v5
       with:
-        go-version: provider/go.mod
+        go-version-file: provider/go.mod
     - name: Install pulumictl
       uses: jaxxstorm/action-install-gh-release@v1.11.0
       with:

@@ -22,7 +22,7 @@ jobs:
       uses: actions/setup-go@v5
       with:
         # The versions of golangci-lint and setup-go here cross-depend and need to update together.
-        go-version: provider/go.mod
+        go-version-file: provider/go.mod
         # Either this action or golangci-lint needs to disable the cache
         cache: false
     - name: disarm go:embed directives to enable lint
