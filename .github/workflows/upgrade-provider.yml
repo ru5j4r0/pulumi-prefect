@@ -1,4 +1,4 @@
-name: Upgrade provider
+name: Upgrade Provider
 on:
   issues:
     types:
