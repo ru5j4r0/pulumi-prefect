@@ -47,6 +47,7 @@ jobs:
         version: '${{ steps.version.outputs.version }}'
         sdk: python
       env:
+        GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
         GOVERSION: '1.22'
         PYTHONVERSION: '3.12'
         PYPI_USERNAME: __token__
