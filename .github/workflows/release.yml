@@ -44,7 +44,7 @@ jobs:
         version: '${{ steps.version.outputs.version }}'
         sdk: python
       env:
-        GOVERSION: sdk/go.mod
+        GOVERSION: '1.22'
         PYTHONVERSION: '3.12'
         PYPI_USERNAME: __token__
         PYPI_PASSWORD: '${{ secrets.PYPI_TOKEN }}'
