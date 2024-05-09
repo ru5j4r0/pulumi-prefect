@@ -21,7 +21,7 @@ builds:
       - -X github.com/ru5j4r0/pulumi-prefect/provider/pkg/version.Version={{.Tag }}
     main: ./cmd/pulumi-resource-prefect/
 changelog:
-  skip: true
+  disable: true
 release:
   disable: false
   prerelease: auto
