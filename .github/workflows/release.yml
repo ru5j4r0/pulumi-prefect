@@ -37,7 +37,7 @@ jobs:
     needs: publish_binary
     steps:
     - id: version
-      uses: pulumi/provider-version-action@1.0.0
+      uses: pulumi/provider-version-action
     - name: Publish SDKs
       uses: pulumi/pulumi-package-publisher@v0.0.15
       with:
