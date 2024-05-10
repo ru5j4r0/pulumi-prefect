@@ -8,7 +8,6 @@ VERSION_PATH := $(PROVIDER_PATH)/pkg/version.Version
 TFGEN := pulumi-tfgen-$(PACK)
 PROVIDER := pulumi-resource-$(PACK)
 JAVA_GEN := pulumi-java-gen
-TESTPARALLELISM := 10
 WORKING_DIR := $(shell pwd)
 PULUMI_CONVERT := 0
 
@@ -89,16 +88,6 @@ provider_no_deps:
 
 provider: tfgen provider_no_deps
 
-test: export PATH := $(WORKING_DIR)/bin:$(PATH)
-test:
-	cd examples && go test -v -tags=all -parallel $(TESTPARALLELISM) -timeout 2h
-
-test_provider:
-	@echo ""
-	@echo "== test_provider ==================================================================="
-	@echo ""
-	cd provider && go test -v -short ./... -parallel $(TESTPARALLELISM)
-
 tfgen: install_plugins upstream tfgen_no_deps
 
 tfgen_no_deps: export PULUMI_HOME := $(WORKING_DIR)/.pulumi
@@ -149,4 +138,4 @@ ci-mgmt: .ci-mgmt.yaml
 debug_tfgen:
 	dlv  --listen=:2345 --headless=true --api-version=2  exec $(WORKING_DIR)/bin/$(TFGEN) -- schema --out provider/cmd/$(PROVIDER)
 
-.PHONY: development build build_sdks install_go_sdk install_python_sdk install_sdks only_build build_go build_python clean cleanup help install_plugins lint_provider provider provider_no_deps test tfgen upstream upstream.finalize upstream.rebase ci-mgmt test_provider debug_tfgen tfgen_build_only
+.PHONY: development build build_sdks install_go_sdk install_python_sdk install_sdks only_build build_go build_python clean cleanup help install_plugins lint_provider provider provider_no_deps tfgen upstream upstream.finalize upstream.rebase ci-mgmt debug_tfgen tfgen_build_only

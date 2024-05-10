@@ -123,6 +123,14 @@ jobs:
       uses: pulumi/actions@v5
       with:
         pulumi-version: ^3
+    - name: Build schema generator binary
+      run: make tfgen_build_only
+    - name: Install plugins
+      run: make install_plugins
+    - name: Generate schema
+      run: make tfgen_no_deps
+    - name: Build provider binary
+      run: make provider_no_deps
     - name: Tar provider binaries
       run: tar -zcf ${{ github.workspace }}/bin/provider.tar.gz -C ${{
         github.workspace }}/bin/ pulumi-resource-${{ env.PROVIDER }}
