@@ -7,21 +7,23 @@ linters:
   - goconst
   - gofmt
   - gosec
+  - gosimple
   - govet
   - ineffassign
   - lll
-  - megacheck
   - misspell
   - nakedret
   - revive
+  - staticcheck
   - unconvert
   - unused
   enable-all: false
 run:
-  skip-files:
-  - schema.go
-  - pulumiManifest.go
   timeout: 20m
+issues:
+  exclude-files:
+    - schema.go
+    - pulumiManifest.go
 linters-settings:
   gci:
     sections:
@@ -29,5 +31,6 @@ linters-settings:
       - blank # Blank section: contains all blank imports.
       - default # Default section: contains all imports that could not be matched to another section type.
       - prefix(github.com/pulumi/) # Custom section: groups all imports with the github.com/pulumi/ prefix.
-      - prefix(github.com/pulumi/pulumi-prefect) # Custom section: local imports
+      - prefix(github.com/prefecthq/terraform-provider-prefect) # Custom section: upstream imports
+      - prefix(github.com/ru5j4r0/pulumi-prefect) # Custom section: local imports
     custom-order: true

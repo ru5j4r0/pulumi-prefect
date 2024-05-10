@@ -2,6 +2,7 @@ package shim
 
 import (
 	"github.com/hashicorp/terraform-plugin-framework/provider"
+
 	p "github.com/prefecthq/terraform-provider-prefect/internal/provider"
 )
 
