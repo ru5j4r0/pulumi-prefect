@@ -1,0 +1,3 @@
+# Required values:
+provider: prefect # substitute the name of your provider, without the pulumi- prefix
+lint: true # Linting should be true in most cases, unless failing rules in the upstream provider makes this impractical.
