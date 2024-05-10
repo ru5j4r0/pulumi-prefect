@@ -1,0 +1,3 @@
+[submodule "terraform-provider-prefect"]
+	path = upstream
+	url = https://github.com/PrefectHQ/terraform-provider-prefect
