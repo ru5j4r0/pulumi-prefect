@@ -6,13 +6,6 @@ archives:
 before:
   hooks:
   - make tfgen
-blobs:
-- bucket: get.pulumi.com
-  folder: releases/plugins/
-  ids:
-  - archive
-  provider: s3
-  region: us-west-2
 builds:
 - binary: pulumi-resource-prefect
   dir: provider
@@ -35,7 +28,7 @@ builds:
   - -X github.com/ru5j4r0/pulumi-prefect/provider/v2/pkg/version.Version={{.Tag}}
   main: ./cmd/pulumi-resource-prefect/
 changelog:
-  skip: true
+  disable: true
 release:
   disable: true
 snapshot:
