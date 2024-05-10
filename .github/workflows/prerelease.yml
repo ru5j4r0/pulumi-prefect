@@ -59,7 +59,8 @@ jobs:
         path: ${{ github.workspace }}/bin
     - name: Untar provider binaries
       run: >-
-        tar -zxf ${{ github.workspace }}/bin/provider.tar.gz -C ${{ github.workspace }}/bin
+        tar -zxf ${{ github.workspace }}/bin/provider.tar.gz -C ${{ github.workspace }}/bin;
+
         find ${{ github.workspace }} -name "pulumi-*-${{ env.PROVIDER }}" -print -exec chmod +x {} \;
     - name: Install plugins
       run: make install_plugins

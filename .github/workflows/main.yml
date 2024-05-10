@@ -64,7 +64,8 @@ jobs:
         path: ${{ github.workspace }}/bin
     - name: Untar provider binaries
       run: >-
-        tar -zxf ${{ github.workspace }}/bin/provider.tar.gz -C ${{ github.workspace }}/bin
+        tar -zxf ${{ github.workspace }}/bin/provider.tar.gz -C ${{ github.workspace }}/bin;
+
         find ${{ github.workspace }} -name "pulumi-*-${{ env.PROVIDER }}" -print -exec chmod +x {} \;
     - name: Install plugins
       run: make install_plugins
@@ -136,9 +137,7 @@ jobs:
     - name: Build provider binary
       run: make provider_no_deps
     - name: Tar provider binaries
-      run: tar -zcf ${{ github.workspace }}/bin/provider.tar.gz -C ${{
-        github.workspace }}/bin/ pulumi-resource-${{ env.PROVIDER }}
-        pulumi-tfgen-${{ env.PROVIDER }}
+      run: tar -zcf ${{ github.workspace }}/bin/provider.tar.gz -C ${{ github.workspace }}/bin/ pulumi-resource-${{ env.PROVIDER }} pulumi-tfgen-${{ env.PROVIDER }}
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
