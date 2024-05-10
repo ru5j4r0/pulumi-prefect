@@ -2,10 +2,6 @@
 
 name: Upgrade bridge
 on:
-  repository_dispatch:
-    types:
-      - upgrade-bridge
-      - upgrade-bridge-test
   workflow_dispatch:
     inputs:
       kind:
@@ -71,16 +67,3 @@ jobs:
         pr-reviewers: ${{ inputs.pr-reviewers }}
         pr-description: ${{ inputs.pr-description }}
         pr-title-prefix: ${{ inputs.pr-title-prefix }}
-    - name: Call upgrade provider action
-      if: github.event_name == 'repository_dispatch'
-      uses: pulumi/pulumi-upgrade-provider-action@v0.0.12
-      with:
-        kind: ${{ github.event.client_payload.kind || 'bridge' }}
-        email: 41898282+github-actions[bot]@users.noreply.github.com
-        username: github-actions[bot]
-        automerge: ${{ github.event.client_payload.automerge }}
-        target-pulumi-version: ${{ github.event.client_payload.target-pulumi-version }}
-        target-bridge-version: ${{ github.event.client_payload.target-bridge-version }}
-        pr-reviewers: ${{ github.event.client_payload.pr-reviewers }}
-        pr-description: ${{ github.event.client_payload.pr-description }}
-        pr-title-prefix: ${{ github.event.client_payload.pr-title-prefix }}

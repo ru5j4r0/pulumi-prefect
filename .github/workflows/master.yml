@@ -4,7 +4,7 @@ name: Master
 on:
   push:
     branches:
-    - master
+    - main
     paths-ignore:
     - "**.md"
     tags-ignore:
