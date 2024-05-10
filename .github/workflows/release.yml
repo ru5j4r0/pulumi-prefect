@@ -105,6 +105,11 @@ jobs:
         path: |
           .pulumi/examples-cache
         key: ${{ runner.os }}-${{ hashFiles('provider/go.sum') }}
+    - name: Install pulumictl
+      uses: jaxxstorm/action-install-gh-release@v1.11.0
+      with:
+        tag: v0.0.46
+        repo: pulumi/pulumictl
     - name: Prepare upstream code
       run: make upstream
     - name: Install Go
@@ -114,11 +119,6 @@ jobs:
         cache-dependency-path: |
           provider/*.sum
           upstream/*.sum
-    - name: Install pulumictl
-      uses: jaxxstorm/action-install-gh-release@v1.11.0
-      with:
-        tag: v0.0.46
-        repo: pulumi/pulumictl
     - name: Install Pulumi CLI
       uses: pulumi/actions@v5
       with:
