@@ -277,6 +277,10 @@
           "store_path": "/nix/store/gd3shnza1i50zn8zs04fa729ribr88m9-python3-3.11.8"
         }
       }
+    },
+    "stdenv.cc.cc.lib": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#stdenv.cc.cc.lib",
+      "source": "nixpkg"
     }
   }
 }

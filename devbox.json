@@ -1,5 +1,6 @@
 {
   "packages": [
+    "stdenv.cc.cc.lib",
     "pulumictl@latest",
     "go@1.21.",
     "python3@3.11.8",
@@ -7,7 +8,9 @@
   ],
   "shell": {
     "init_hook": [
-      "export PATH=\"$(pwd)/bin/:$PATH\" && . $VENV_DIR/bin/activate"
+      "export LD_LIBRARY_PATH=`pwd`/.devbox/nix/profile/default/lib:$LD_LIBRARY_PATH",
+      "export PATH=\"$(pwd)/bin/:$PATH\"",
+      ". $VENV_DIR/bin/activate"
     ]
   }
 }
