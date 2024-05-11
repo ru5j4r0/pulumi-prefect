@@ -1,16 +1,19 @@
 {
-  "name": "Devbox Remote Container",
   "build": {
-    "dockerfile": "./Dockerfile",
-    "context": ".."
+    "context": "..",
+    "dockerfile": "./Dockerfile"
   },
   "customizations": {
     "vscode": {
-      "settings": {},
       "extensions": [
-        "jetpack-io.devbox"
+        "jetpack-io.devbox",
+        "golang.go",
+        "github.vscode-github-actions",
+        "ms-python.python",
+        "charliermarsh.ruff"
       ]
     }
   },
+  "name": "Devbox Remote Container",
   "remoteUser": "devbox"
 }

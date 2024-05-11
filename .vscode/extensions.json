@@ -1,6 +1,9 @@
 {
 	"recommendations": [
+		"jetpack-io.devbox",
 		"golang.go",
-		"github.vscode-github-actions"
+		"github.vscode-github-actions",
+		"ms-python.python",
+		"charliermarsh.ruff"
 	]
 }

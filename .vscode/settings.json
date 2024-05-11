@@ -4,5 +4,14 @@
 	"go.lintTool": "golangci-lint",
 	"go.showWelcome": false,
 	"go.survey.prompt": false,
-	"go.toolsManagement.autoUpdate": true
+	"go.toolsManagement.autoUpdate": true,
+	"python.analysis.autoFormatStrings": true,
+	"python.analysis.autoImportCompletions": true,
+	"python.analysis.completeFunctionParens": true,
+	"python.analysis.enablePytestSupport": false,
+	"python.analysis.typeCheckingMode": "standard",
+	"python.createEnvironment.trigger": "off",
+	"python.experiments.enabled": false,
+	"python.languageServer": "Pylance",
+	"python.terminal.activateEnvironment": false
 }
